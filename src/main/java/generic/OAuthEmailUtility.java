@@ -15,12 +15,8 @@
 //	
 //	
 //	
-//	 private static final String CLIENT_ID = "8ff5cbf7-52bf-4c7e-96fe-6e6725bd0a11";
-//	 		
-//	 private static final String TENANT_ID = "deaf5f18-3a52-4151-bff5-ed8bd300f4bb";
-//	 private static final String CLIENT_SECRET = "yl~8Q~kDTPRiMI4FxepJL2wumHhSnmtU1mnVmasp";
-//	 private static final String SCOPE = "https://outlook.office365.com/.default";  // Change to appropriate scope
-//
+
+
 ////public static String getAccessToken() throws MalformedURLException {
 //	
 //	    
