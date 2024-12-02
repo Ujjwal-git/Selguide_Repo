@@ -6,22 +6,47 @@ import javax.mail.*;
 import javax.mail.internet.*;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Properties;
 
 public class EmailUtility {
+	
+	
+	public static Properties loadConfig() {
+        Properties config = new Properties();
+        String projectDir = System.getProperty("user.dir");
+        
+        // Use File.separator to correctly handle file paths for different operating systems
+        String filePath = projectDir + File.separator + "Configuration" + File.separator + "config.properties";
+        
+        try (FileInputStream fis = new FileInputStream(filePath)) {
+            config.load(fis);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException("Failed to load configuration file");
+        }
+        
+        return config;
+    }
 
 	public static void sendEmail(String subject, String body,String filePath1,String filePath2) {
 		// Outlook SMTP server configuration
+		Properties config = loadConfig();
 		String host = "smtp.gmail.com";
 		String port = "587";
 		String username = "rajatverma15890@gmail.com";
-		String password = "fhzg ihzj movp vxbe";
-
+		//String password = "fhzg ihzj movp vxbe";
+		String password = config.getProperty("SECRET_KEY");
+		
+		
+		
 		Properties properties = new Properties();
 		properties.put("mail.smtp.host", host);
 		properties.put("mail.smtp.port", port);
 		properties.put("mail.smtp.auth", "true");
 		properties.put("mail.smtp.starttls.enable", "true");
+		
 
 		Session session = Session.getInstance(properties, new Authenticator() {
             @Override
@@ -38,9 +63,9 @@ public class EmailUtility {
         File emailableReportFile = files != null && files.length > 0 ? files[0] : null;
         
         
-        File allureReportDir = new File(projectDir, "allure-report");
-        File[] allureFiles = allureReportDir.listFiles((dir, name) ->name.startsWith("index") && name.endsWith(".html"));
-        File allureReportFile = allureFiles != null && allureFiles.length > 0 ? allureFiles[0] : null;
+        File allureReportDir = new File("C:\\Users\\nainc\\eclipse-workspace\\selguide\\allure-report\\index.html");
+      //  File[] allureFiles = allureReportDir.listFiles((dir, name) ->name.startsWith("index") && name.endsWith(".html"));
+       // File allureReportFile = allureFiles != null && allureFiles.length > 0 ? allureFiles[0] : null;
         
         
         

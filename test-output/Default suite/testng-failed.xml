@@ -3,11 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="testcases.GmailAutomate">
+      <class name="testcases.abcTest">
         <methods>
-          <include name="gmailAutomate"/>
+          <include name="afterMethod"/>
+          <include name="testSample"/>
         </methods>
-      </class> <!-- testcases.GmailAutomate -->
+      </class> <!-- testcases.abcTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
