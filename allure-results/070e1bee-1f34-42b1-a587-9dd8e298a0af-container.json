@@ -1,0 +1,1 @@
+{"uuid":"070e1bee-1f34-42b1-a587-9dd8e298a0af","name":"testcases.SeleniumTestWithFailureEmail","children":["7a43ac47-2201-4d66-bd3e-a382cff91202"],"befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1729244817067,"stop":1729244819978}],"afters":[],"start":1729244812577,"stop":1729244824141}
